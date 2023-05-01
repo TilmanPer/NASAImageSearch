@@ -1,0 +1,385 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+header {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.logo-text {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+a img {
+  width: auto;
+  height: 80px;
+  margin-right: 10px;
+  transition: transform 0.3s ease-in-out;
+  border: none;
+  vertical-align: middle;
+}
+
+a:hover img {
+  transform: rotate(360deg);
+}
+
+#search-form {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  border-right: none;
+  font-size: 16px;
+  width: 70%;
+  max-width: 500px;
+  outline: none;
+
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  border-left: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+
+button[type="submit"]:hover {
+  background-color: #aaa;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+.image {
+  width: 23%;
+  margin: 0 1%;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.2s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.image:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.image img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+  width: 1000px;
+  height: 1000px;
+  overflow: auto;
+}
+
+.popup img {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.popup h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.popup p {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+.popup p a {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.popup p a:hover {
+  background-color: #0062cc;
+}
+
+.popup .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.popup .close-button:hover {
+  color: #007bff;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+}
+
+.popup-open {
+  overflow: hidden;
+}
+
+.popup-open .popup-overlay {
+  display: block;
+}
+
+#pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.page-link {
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+}
+
+.pagination-arrow {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 10px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.pagination-arrow:hover {
+  color: #007bff;
+}
+
+.left-arrow {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .left-arrow {
+    display: block;
+  }
+}
+
+.active {
+  background-color: #ccc;
+  color: #000;
+  cursor: default;
+}
+
+/* Switch */
+
+input[type="checkbox"] {
+  display: none;
+}
+
+.switch {
+  position: relative;
+  margin: 10px;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 1rem;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: #444;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  border-radius: 1rem;
+}
+
+input[type="checkbox"]:checked + .slider {
+  background-color: #444;
+}
+
+input[type="checkbox"]:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+  background-color: #fff;
+}
+
+body.dark-mode input[type="checkbox"]:checked + .slider:before {
+  background-color: #222;
+}
+
+/* /Switch */
+
+/* dark design */
+
+.dark-mode {
+  --bg-color: #222;
+  --fg-color: #ddd;
+}
+
+body.dark-mode {
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+}
+
+.popup-overlay {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dark-mode .popup {
+  background-color: #222;
+  color: #ddd;
+}
+
+.dark-mode .close-button {
+  color: #ddd;
+}
+
+@media only screen and (min-width: 1800px) {
+  #search-form {
+    width: 800px;
+  }
+}
+
+@media only screen and (min-width: 1184px) {
+  .header {
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (max-width: 1184px) {
+  .logo-text {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 748px) {
+  .logo {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .switch {
+    position: absolute;
+    top: -100px;
+  }
+  .slider {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .image {
+    width: 31.3%;
+    margin: 0 1%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .image {
+    width: 48%;
+    margin: 0 1%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .image {
+    width: 98%;
+    margin: 0 1%;
+  }
+}

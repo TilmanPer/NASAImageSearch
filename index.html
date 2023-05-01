@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>NASA Images Search</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="https://www.nasa.gov/" target="_blank">
+                <img src="./NASA.png" alt="NASA Logo">
+            </a>
+            <div class="logo-text">
+                NASA Image Search
+            </div>
+        </div>
+        <form id="search-form">
+            <label for="search-input"></label>
+            <input type="text" id="search-input" placeholder="Enter keyword(s)">
+            <button type="submit">Search</button>
+        </form>
+
+        <div class="switch">
+            <input type="checkbox">
+            <span class="slider"></span>
+        </div>
+    </header>
+
+    <div id="image-container"></div>
+    <div id="pagination">
+        <span class="pagination-arrow left-arrow">&#8249;</span>
+        <span class="pagination-links"></span>
+        <span class="pagination-arrow right-arrow">&#8250;</span>
+    </div>
+
+    <div id="popup-container"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
